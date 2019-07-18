@@ -14,16 +14,7 @@ set smartindent
 " configure tabwidth and insert spaces instead of tabs
 set tabstop=4
 set shiftwidth=4
-if has("autocmd")
-	autocmd FileType python setlocal sts=4 expandtab
-endif
-if expand("%:e")=="py"
-	setlocal sts=4
-	setlocal expandtap
-elseif expand("%:e")=="F90"
-	let fortran_free_source=1
-	unlet! fortran_fixed_source
-endif
+autocmd Filetype python setlocal expandtab tabstop=4 shiftwidth=4
 " wrap lines at 120 chars
 "set textwidth=120
 " turn syntax highlighting on
